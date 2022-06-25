@@ -1,0 +1,106 @@
+<?php
+/**
+ * Product Loop Start
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/loop/loop-start.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see 	    https://docs.woocommerce.com/document/template-structure/
+ * @package 	WooCommerce/Templates
+ * @version     3.3.0
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+
+
+<main class="row">
+
+<?php
+	// Only run on shop archive pages, not single products or other pages
+	if ( is_shop() || is_product_category() || is_product_tag() ) {
+		// Products per page
+		$per_page = 100;
+		if ( get_query_var( 'taxonomy' ) ) { // If on a product taxonomy archive (category or tag)
+			$args = array(
+				'post_type' => 'product',
+				'posts_per_page' => $per_page,
+				'orderby'=> 'menu_order',
+				'order' => 'ASC',
+				'paged' => get_query_var( 'paged' ),
+				'tax_query' => array(
+					array(
+						'taxonomy' => get_query_var( 'taxonomy' ),
+						'field'    => 'slug',
+						'terms'    => get_query_var( 'term' ),
+					),
+				),
+			);
+		} else { // On main shop page
+			$args = array(
+				'post_type' => 'product',
+				/*'orderby' => 'date',
+				'order' => 'DESC',*/
+				'orderby'=> 'menu_order',
+				'order' => 'ASC',
+				'posts_per_page' => 9,
+				'paged' => get_query_var( 'paged' ),
+			);
+		}
+		// Set the query
+		$products = new WP_Query( $args );
+		// Standard loop
+		if ( $products->have_posts() ) :
+			while ( $products->have_posts() ) : $products->the_post();
+				// Your new HTML markup goes here
+				?>
+				<div class="col-12 col-md-4 my-3">
+					<a class="enlacetienda" href="<?php the_permalink() ?>">
+						<div <?php wc_product_class( 'card'); ?>>
+							<?php global $product;
+								if ( !$product->is_in_stock() ) {
+									echo '<span class="now_sold">AGOTADO</span>';
+							} ?>
+							<div class="img-loop-wrap card-img-top">
+								<?php
+									if ( has_post_thumbnail() && ! post_password_required() ) : 
+										$imgURL = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
+								?>
+									<img src="<?php echo $imgURL; ?>" alt="" class="img-fluid d-none mx-auto">
+									<div class="shop-image" style="background-image:url('<?php echo $imgURL; ?>'); background-size:cover;background-repeat:no-repeat;height:250px"></div>
+								<?php endif; ?>
+							</div>
+							
+							<div class="card-tittle">
+								<h5>    
+									<?php the_title(); ?>
+								</h5>
+								<?php global $woocommerce;
+									$product = new WC_Product(get_the_ID()); 
+									echo $product->get_price_html(); //Shows the <price></price>
+								?>
+							</div>
+							
+							<div class="boton">
+								<p class="btn btn-vita"> <i class="fa fa-search" aria-hidden="true"></i> Ver Más</p>
+							</div>   
+							      
+
+						</div>
+					</a>
+				</div>
+				<?php
+			endwhile;
+			wp_reset_postdata();
+		endif;
+	} else { // If not on archive page (cart, checkout, etc), do normal operations
+		woocommerce_content();
+	}
+?>
