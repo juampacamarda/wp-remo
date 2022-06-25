@@ -1,12 +1,22 @@
 # ignore everything in the root except the "wp-content" directory.
-!wp-content/
+/*
 
 # ignore everything in the "wp-content" directory, except:
 # "mu-plugins", "plugins", "themes" directory
-wp-content/*
-!wp-content/mu-plugins/
-!wp-content/plugins/
-!wp-content/themes/
+!app
+app/public/*
+!app/public/wp-content/
+app/public/wp-content/*
+!app/public/wp-content/plugins/
+app/public/wp-content/plugins/*
+!app/public/wp-content/plugins/acf-theme-code
+!app/public/wp-content/plugins/advanced-custom-fields-pro
+!app/public/wp-content/plugins/click-to-chat-for-whatsapp
+!app/public/wp-content/plugins/contact-form-7
+!app/public/wp-content/plugins/woocommerce
+!app/public/wp-content/themes/
+app/public/wp-content/themes/*
+!app/public/wp-content/themes/remo-theme
 
 # ignore these plugins
 wp-content/plugins/hello.php
