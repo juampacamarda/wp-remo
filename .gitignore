@@ -8,7 +8,7 @@ app/public/*
 !app/public/wp-content/
 app/public/wp-content/*
 !app/public/wp-content/plugins/
-app/public/wp-content/plugins/*
+app/public/wp-content/plugins/
 #!app/public/wp-content/plugins/acf-theme-code
 #!app/public/wp-content/plugins/advanced-custom-fields-pro
 #!app/public/wp-content/plugins/click-to-chat-for-whatsapp
