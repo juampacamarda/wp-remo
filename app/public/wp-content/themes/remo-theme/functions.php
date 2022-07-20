@@ -1,7 +1,7 @@
 <?php
 /*Este código muestra los estilos que aplicamos en el archivo custom-login-styles.css dentro de la carpeta login*/
 function custom_login() {
-  wp_enqueue_style( 'custom-login-css', get_stylesheet_directory_uri() . '/assets/css/base-style.css', array(), '1.0' );
+  wp_enqueue_style( 'custom-login-css', get_stylesheet_directory_uri() . '/assets/css/remo-base-style.css', array(), '1.0' );
 }
 add_action( 'login_head', 'custom_login' );
 function custom_url_login() {
@@ -22,7 +22,7 @@ function theme_scripts(){
     wp_enqueue_script( 'popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' );
     wp_enqueue_script( 'bootstrapjs', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' );
     wp_enqueue_script( 'prefix-font-awesome', 'https://kit.fontawesome.com/ef7428ba99.js' );
-    wp_enqueue_script('theme-js', get_stylesheet_directory_uri() .'/assets/js/theme-Remo.js');
+    wp_enqueue_script('theme-js', get_stylesheet_directory_uri() .'/assets/js/theme-remo.js');
     wp_enqueue_script('owljs', get_stylesheet_directory_uri().'/assets/owlcarousel/owl.carousel.min.js');
     wp_enqueue_script('aosjs', 'https://unpkg.com/aos@next/dist/aos.js');
 

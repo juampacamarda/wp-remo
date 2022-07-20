@@ -76,9 +76,11 @@ jQuery(document).ready(function ($) {
     $("html, body").animate({ scrollTop: $(href).offset().top }, 800);
     });
 
-    if ( ! defined( 'WPCF7_LOAD_JS' ) ) {
+    /*
+    if ( !defined( 'WPCF7_LOAD_JS' ) ) {
         define( 'WPCF7_LOAD_JS', false );
     }
+    */
 
     // Code that uses jQuery's $ can follow here.
 })
