@@ -1,18 +1,18 @@
 <?php
 /*Este código muestra los estilos que aplicamos en el archivo custom-login-styles.css dentro de la carpeta login*/
 function custom_login() {
-  wp_enqueue_style( 'custom-login-css', get_stylesheet_directory_uri() . '/login/custom-login-styles.css', array(), '1.0' );
+  wp_enqueue_style( 'custom-login-css', get_stylesheet_directory_uri() . '/assets/css/base-style.css', array(), '1.0' );
 }
 add_action( 'login_head', 'custom_login' );
 function custom_url_login() {
-	return 'https://liebre.online/'; // Ponemos la web que queramos.
+	return 'http://remodigital.com.ar/'; // Ponemos la web que queramos.
 }
 add_filter( 'login_headerurl', 'custom_url_login' );
 
 //abajo carga estilos
 function theme_scripts(){
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() .'/assets/css/base-style.css');
-    wp_enqueue_style('theme-wc', get_stylesheet_directory_uri() .'/assets/css/woocommerce-edit.css');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() .'/assets/css/remo-base-style.css');
+    wp_enqueue_style('theme-wc', get_stylesheet_directory_uri() .'/assets/css/remo-wc.css');
     wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
     wp_enqueue_style( 'owl', get_stylesheet_directory_uri() .'/assets/owlcarousel/owl.carousel.min.css' );
     wp_enqueue_style( 'owltheme', get_stylesheet_directory_uri() .'/assets/owlcarousel/owl.carousel.min.css' );
@@ -127,10 +127,12 @@ function plantilla_add_woocommerce_support() {
             'max_columns'     => 5,
         ),
     ) );
+
     // Single Product Gallery Addons
     add_theme_support( 'wc-product-gallery-zoom' );
     add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );   
+    add_theme_support( 'wc-product-gallery-slider' );  
+    
 }
 add_action( 'after_setup_theme', 'plantilla_add_woocommerce_support');
 
@@ -230,23 +232,7 @@ add_action( 'after_setup_theme', 'register_navwalker' );
 
 //agregar iconito carro
 
-function my_header_add_to_cart_fragment( $fragments ) {
- 
-    ob_start();
-    $count = WC()->cart->cart_contents_count;
-    ?><a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php
-    if ( $count > 0 ) {
-        ?>
-        <span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
-        <?php            
-    }
-        ?></a><?php
- 
-    $fragments['a.cart-contents'] = ob_get_clean();
-     
-    return $fragments;
-}
-add_filter( 'woocommerce_add_to_cart_fragments', 'my_header_add_to_cart_fragment' );
+
 
 add_action( 'woocommerce_before_shop_loop_item_title', function() {
    global $product;
@@ -286,7 +272,8 @@ add_action( 'woocommerce_after_single_product_summary', 'formulario_productos', 
 
 //add_action( 'woocommerce_before_cart_totals', 'aviso_tienda' );
 
-/*
+/* Modifica Listado de provincias
+
 add_filter('woocommerce_states', 'lista_provincias');
 
 function lista_provincias( $provincias ) {
@@ -302,7 +289,8 @@ return $provincias;
 }
 */
 
-remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
+/*ocultar add to cart del loop*/ 
+//remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
 
 /**
 
