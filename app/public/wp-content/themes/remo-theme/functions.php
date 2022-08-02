@@ -196,13 +196,13 @@ function relacionados(){
 		'position'		=> 5.4
 	));
 
-	/*
+	
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'Slide Home',
 		'menu_title'	=> 'slide',
 		'parent_slug'	=> 'Remo-theme',
 	));
-    */
+    
 
 }
 
@@ -250,21 +250,28 @@ function remo_search_filter_pages($query) {
     }
     return $query;
 }
- 
 add_filter('pre_get_posts','remo_search_filter_pages');
 
 /* funcion formulario de productos */
-function formulario_productos(){
+function remo_formulario_productos(){
     echo get_template_part( './contactoproductos' );
 }
+
+/* funcion slide shop */
+function remo_slide_shop(){
+    echo get_template_part( './home/slide' );
+}
+
+add_action( 'woocommerce_before_main_content', 'remo_slide_shop', 5 );
 
 /*function aviso_tienda(){
     echo get_template_part( './woocommerce/aviso-tienda' );
 }*/
 
 /* formulario de productos */
+
 /* agregar formulario de productos */
-add_action( 'woocommerce_after_single_product_summary', 'formulario_productos', 16 );
+add_action( 'woocommerce_after_single_product_summary', 'remo_formulario_productos', 16 );
 
 //remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 

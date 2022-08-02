@@ -460,6 +460,10 @@ footer {
 
 /*slides*/
 
+.woocommerce-shop .remo-home-carousel{
+	display: block!important;
+}
+
 .carousel-item {
 		background-position: center;
 }
@@ -484,6 +488,7 @@ footer {
 		z-index: 60;
 		position: absolute;
 		top: 0;
+		width: 100%;
 }
 
 .content-slide h1 {
@@ -495,7 +500,6 @@ footer {
 		width: 90%;
 		margin:auto;
 		text-align:center;
-		font-family: 'Playfair Display', serif;
 		font-weight: 700;
 		font-size: 24px;
 }

@@ -1,5 +1,5 @@
-<?php if ( get_field( 'imagen_01') ) { ?>
-<section id="home-carousel" class="d-lg-block">      
+<?php if ( get_field( 'imagen_01', 'option') ) { ?>
+<section id="home-carousel" class="remo-home-carousel d-none">      
 		<div id="slide-home" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators d-none">
 						<li data-target="#slide-home" data-slide-to="0" class="active"></li>
@@ -8,20 +8,14 @@
 						
 				</ol>
 				<div class="carousel-inner">
-						<?php $link_slide_1 = get_field( 'link_slide_1' ); ?>  
+						<?php $link_slide_1 = get_field( 'link_slide_1', 'option' ); ?>  
 								<a class="carousel-item active" href="<?php echo esc_url( $link_slide_1) ; ?>">
-										<div  style="background-image:url('<?php the_field( 'imagen_01' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 100vh;">
+										<div  style="background-image:url('<?php the_field( 'imagen_01', 'option' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 365px;">
 												
-														<!--<img src="<?//php the_field( 'imagen_01' ); ?>" class="d-block w-100" />
-												
-												<img src="<//?php echo get_template_directory_uri(); ?>/assets/img/slide/SILDE-01.jpg" class="d-block w-100">
-												<div class="carousel-caption d-none d-md-block">
-														<p>Alquiler y venta de elementos de ortopedia, rehabilitación e internación domiciliaria.</p>
-														<img src="<//?php echo get_template_directory_uri(); ?>/assets/img/slide/LOGITOS.png" alt="">
-												</div>-->
+										
 												<div class="content-slide">
 													<h1 class="animated bounceInUp slow">
-														<?php the_field( 'texto_slide_01' ); ?>
+														<?php the_field( 'texto_slide_01', 'option' ); ?>
 													</h1>
 												</div>
 												
@@ -29,21 +23,14 @@
 										</div>
 								</a>
 					
-						<?php if ( get_field( 'imagen_2') ) { ?>
-								<?php $link_slide_2 = get_field( 'link_slide_2' ); ?>  
+						<?php if ( get_field( 'imagen_2', 'option') ) { ?>
+								<?php $link_slide_2 = get_field( 'link_slide_2', 'option' ); ?>  
 										<a class="carousel-item" href="<?php echo esc_url( $link_slide_2) ; ?>">
 
-												<div  style="background-image:url('<?php the_field( 'imagen_2' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 100vh;">
-														
-																<!--  <img src="<//?php the_field( 'imagen_2' ); ?>" class="d-block w-100" />
-												
-																<img src="<//?php echo get_template_directory_uri(); ?>/assets/img/slide/SILDE-02.jpg" class="d-block w-100" >
-																<div class="carousel-caption d-none d-md-block">
-																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-														</div>-->
+												<div  style="background-image:url('<?php the_field( 'imagen_2', 'option' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 365px;">
 														<div class="content-slide">
 													<h1 class="animated bounceInUp slow">
-														<?php the_field( 'texto_slide_2' ); ?>
+														<?php the_field( 'texto_slide_2', 'option' ); ?>
 													</h1>
 												</div>
 														<div class="overlay d-none"></div>
@@ -51,22 +38,15 @@
 
 										</a>
 						<?php } ?>
-						<?php if ( get_field( 'imagen_3') ) { ?>
-								<?php $link_slide_3 = get_field( 'link_slide_3' ); ?>  
+						<?php if ( get_field( 'imagen_3', 'option') ) { ?>
+								<?php $link_slide_3 = get_field( 'link_slide_3', 'option' ); ?>  
 										
 										<a class="carousel-item" href="<?php echo esc_url( $link_slide_3) ; ?>">
 
-												<div  style="background-image:url('<?php the_field( 'imagen_3' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 100vh;">
-														
-														<!--  <img src="<//?php the_field( 'imagen_3' ); ?>" class="d-block w-100" />
-												
-														<!-- <img src="<//?php echo get_template_directory_uri(); ?>/assets/img/slide/SILDE-02.jpg" class="d-block w-100" >
-																<div class="carousel-caption d-none d-md-block">
-																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-														</div>-->
+												<div  style="background-image:url('<?php the_field( 'imagen_3', 'option' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 365px;">
 														<div class="content-slide">
 															<h1 class="animated bounceInUp slow">
-																<?php the_field( 'texto_slide_3' ); ?>
+																<?php the_field( 'texto_slide_3', 'option' ); ?>
 															</h1>
 														</div>
 														<div class="overlay d-none"></div>
@@ -75,21 +55,14 @@
 										</a>
 
 						<?php } ?>
-						<?php if ( get_field( 'imagen_4') ) { ?>
-						<?php $link_slide_4 = get_field( 'link_slide_4' ); ?>  
+						<?php if ( get_field( 'imagen_4', 'option') ) { ?>
+						<?php $link_slide_4 = get_field( 'link_slide_4', 'option' ); ?>  
 				 						
 										<a class="carousel-item" href="<?php echo esc_url( $link_slide_4) ; ?>">
-												<div  style="background-image:url('<?php the_field( 'imagen_4' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 100vh;">
-														
-																<!-- <img src="<//?php the_field( 'imagen_4' ); ?>" class="d-block w-100" />
-												
-																<img src="<//?php echo get_template_directory_uri(); ?>/assets/img/slide/SILDE-02.jpg" class="d-block w-100" >
-																<div class="carousel-caption d-none d-md-block">
-																<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-														</div>-->
+												<div  style="background-image:url('<?php the_field( 'imagen_4', 'option' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 365px;">
 														<div class="content-slide">
 															<h1 class="animated bounceInUp slow">
-																<?php the_field( 'texto_slide_4' ); ?>
+																<?php the_field( 'texto_slide_4', 'option' ); ?>
 															</h1>
 														</div>
 														<div class="overlay d-none"></div>
@@ -97,21 +70,14 @@
 										</a>
 
 						<?php } ?>
-						<?php if ( get_field( 'imagen_5') ) { ?>
-						<?php $link_slide_5 = get_field( 'link_slide_5' ); ?>  
+						<?php if ( get_field( 'imagen_5', 'option') ) { ?>
+						<?php $link_slide_5 = get_field( 'link_slide_5', 'option' ); ?>  
 				 						
 								<a class="carousel-item" href="<?php echo esc_url( $link_slide_5) ; ?>">
-										<div  style="background-image:url('<?php the_field( 'imagen_5' ); ?>'); background-size:cover;background-repeat:no-repeat;height: 100vh;">
-												
-														<!--  <img src="<//?php the_field( 'imagen_5' ); ?>" class="d-block w-100" />
-										
-														<img src="<//?php echo get_template_directory_uri(); ?>/assets/img/slide/SILDE-02.jpg" class="d-block w-100" >
-														<div class="carousel-caption d-none d-md-block">
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-												</div>-->
+										<div  style="background-image:url('<?php the_field( 'imagen_5' , 'option'); ?>'); background-size:cover;background-repeat:no-repeat;height: 365px;">
 												<div class="content-slide">
 													<h1 class="animated bounceInUp slow">
-														<?php the_field( 'texto_slide_5' ); ?>
+														<?php the_field( 'texto_slide_5' , 'option'); ?>
 													</h1>
 												</div>
 												<div class="overlay d-none"></div>
@@ -134,5 +100,5 @@
 		</div>
 </section>
 <?php } ?>
-<a href="#suscripcion-news" class="btn btn-down"><i class="fas fa-arrow-alt-circle-down"></i></a>
+
 <!--fin Carousel-->
