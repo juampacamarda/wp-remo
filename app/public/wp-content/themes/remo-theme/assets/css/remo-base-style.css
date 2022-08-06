@@ -449,6 +449,7 @@ img.mp {
 
 div#datafooter {
 		justify-content: space-between;
+		padding: 0 20px;
 }
 
 
@@ -456,6 +457,18 @@ footer {
 		display: flex!important;
 		justify-content: center;
 		align-items: center;
+}
+
+#datafooter .logos-footer img {
+	max-height: 125px;
+	margin: 0 15px;
+}
+
+#datafooter .logos-footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-end;
 }
 
 /*slides*/

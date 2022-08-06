@@ -196,10 +196,22 @@ function relacionados(){
 		'position'		=> 5.4
 	));
 
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Editar Footer del Sitio',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'Remo-theme',
+	));
+
 	
     acf_add_options_sub_page(array(
 		'page_title' 	=> 'Slide Home',
 		'menu_title'	=> 'slide',
+		'parent_slug'	=> 'Remo-theme',
+	));
+
+    acf_add_options_sub_page(array(
+		'page_title' 	=> 'Formulario Consulta Productos',
+		'menu_title'	=> 'Formulario Productos',
 		'parent_slug'	=> 'Remo-theme',
 	));
     

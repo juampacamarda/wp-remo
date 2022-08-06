@@ -51,21 +51,31 @@
 														<li class="redes border-r padding-datos">
 																<!--<<h3 class="title-datos">Nuestras redes</h3>-->
 																<ul class="nav data-datos header-redes">
+																		<?php if ( get_field( 'instagram_link', 'option') ) { ?>
 																		<li>
-																				<a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+																				<a href="<?php the_field( 'instagram_link', 'option' ); ?>" target="_blank"><i class="fab fa-instagram"></i></a>
 																		</li>
+																		<?php } ?>
+																		<?php if ( get_field( 'facebook_link', 'option') ) { ?>
 																		<li>
-																				<a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+																				<a href="<?php the_field( 'facebook_link', 'option' ); ?>" target="_blank"><i class="fab fa-facebook"></i></a>
 																		</li>
+																		<?php } ?>
+																		<?php if ( get_field( 'tel_numero', 'option') ) { ?>
 																		<li>
-																				<a href="tel:#"><i class="fa fa-phone"></i></a>
+																				<a href="tel:<?php the_field( 'tel_numero', 'option' ); ?>"><i class="fa fa-phone"></i></a>
 																		</li>
+																		<?php } ?>
+																		<?php if ( get_field( 'wsp_link', 'option') ) { ?>
 																		<li>
-																				<a href="https://wa.me/#"><i class="fab fa-whatsapp"></i></a>
+																				<a href="https://wa.me/<?php the_field( 'wsp_link', 'option' ); ?>"><i class="fab fa-whatsapp"></i></a>
 																		</li>
+																		<?php } ?>
+																		<?php if ( get_field( 'mail', 'option') ) { ?>
 																		<li>
-																				<a href="mailto:#"><i class="fa fa-envelope"></i></a>
+																				<a href="mailto:<?php the_field( 'mail', 'option' ); ?>"><i class="fa fa-envelope"></i></a>
 																		</li>
+																		<?php } ?>
 																</ul>
 														</li>
 														<li class="carrito-compras">
@@ -73,9 +83,8 @@
 																		$count = WC()->cart->cart_contents_count;
 																		?>
 																		<a class="remo-cart-contents btn remo-btn" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>">
-																		<i class="fa fa-shopping-basket" aria-hidden="true"></i> Mi Compra
-																		<?php if ( $count > 0 ) { ?>
-																				
+																			<i class="fa fa-shopping-basket" aria-hidden="true"></i> Mi Compra
+																				<?php if ( $count > 0 ) { ?>
 																				<span class="cart-contents-count"><?php echo esc_html( $count ); ?></span>
 																				<?php } ?>
 																		</a>

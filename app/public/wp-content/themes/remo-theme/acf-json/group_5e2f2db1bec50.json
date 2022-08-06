@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_5e2f2d90a0573",
-            "label": "Formulario-news",
-            "name": "formulario_news",
+            "label": "Formulario-producto",
+            "name": "formulario_producto",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,9 +25,9 @@
     "location": [
         [
             {
-                "param": "page_type",
+                "param": "options_page",
                 "operator": "==",
-                "value": "front_page"
+                "value": "acf-options-formulario-productos"
             }
         ]
     ],
@@ -53,6 +53,6 @@
     ],
     "active": true,
     "description": "",
-    "show_in_rest": false,
-    "modified": 1656287989
+    "show_in_rest": 0,
+    "modified": 1659758239
 }
